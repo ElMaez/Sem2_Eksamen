@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+---
+
+<article class="index_collage">
+  <section class="collage_1">
+    <img src="/img/collage/collage1.webp" alt="" />
+    <p>
+      Meyhane culture is an integral part of Istanbul's social and culinary
+      heritage, embodying the city's rich history and its role as a bridge
+      between East and West. These traditional taverns have long been places of
+      gathering, where friends and strangers come together to share food,
+      drinks, music, and heartfelt conversations.
+    </p>
+  </section>
+  <section class="collage_2">
+    <p>
+      At the center of the meyhane experience is rakı, the iconic anise-flavored
+      spirit, often referred to as "lion’s milk." Rakı is typically enjoyed
+      slowly, accompanied by meze, a selection of small, artfully prepared
+      dishes. These might include creamy haydari, tangy stuffed grape leaves,
+      chargrilled eggplant, fresh seafood, and spiced meats, all designed to be
+      savored over hours of conversation and laughter.
+    </p>
+    <img src="/img/collage/collage2.webp" alt="" />
+  </section>
+  <section class="collage_3">
+    <img src="/img/collage/collage3.webp" alt="" />
+    <p>
+      Meyhanes themselves often reflect the spirit of Istanbul, blending
+      old-world charm with modern energy. Traditional live music, including
+      fasıl—a style of Turkish classical music—frequently accompanies the meal,
+      enhancing the ambiance and evoking a deep sense of nostalgia. Whether in a
+      bustling neighborhood or a quiet seaside spot, meyhanes are more than just
+      places to eat; they are spaces where stories are shared, traditions are
+      celebrated, and the soul of Istanbul comes to life.
+    </p>
+  </section>
+  <section class="collage_4">
+    <p>
+      Istanbul’s cuisine is a mirror of its rich history, shaped by centuries of
+      cultural exchange and its unique position as the meeting point of Europe
+      and Asia. The city's culinary traditions draw from Ottoman, Greek,
+      Armenian, Jewish, and Middle Eastern influences, creating a vibrant and
+      diverse food scene. From the lively fish markets along the Bosphorus to
+      the labyrinthine alleys of the Grand Bazaar, every corner of Istanbul
+      offers a sensory experience.
+    </p>
+    <img src="/img/collage/collage4.webp" alt="" />
+    <p></p>
+  </section>
+</article>
+<section class="final">
+  <img src="/img/collage/final.webp" alt="" />
+  <p></p>
+</section>
+
+<style>
+  .index_collage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, fit-content);
+  }
+
+  .index_collage section {
+    grid-column: 1/-1;
+    grid-row: span 1;
+    width: 100dvw;
+    height: fit-content;
+    padding: var(--gap2);
+  }
+  .index_collage section:nth-child(even) {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .index_collage section:nth-child(odd) {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: 1fr;
+  }
+  .index_collage img {
+    grid-column: span 1;
+    width: 70%;
+    align-self: center;
+  }
+  .index_collage img:nth-child(odd) {
+  }
+  .index_collage img:nth-child(even) {
+    justify-self: end;
+  }
+  .index_collage p {
+    grid-column: span 1;
+    align-self: center;
+  }
+  .final {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: auto;
+  }
+  .final img {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    justify-self: center;
+    max-width: 80%;
+  }
+</style>

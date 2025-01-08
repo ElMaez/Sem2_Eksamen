@@ -1,0 +1,115 @@
+---
+import "../../styles/global.css";
+
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import CollageSingleview from "../../components/CollageSingleview.astro";
+import Recommended from "../../components/Recommended.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/product?select=*",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucmNoYmFkYmtpcmZ6a2NlYmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5NzA4MjYsImV4cCI6MjA0MTU0NjgyNn0.mpSt_VfMJynts4yNhF_lHvJafqeHolxXL7wYKBacfjA",
+      },
+    }
+  ).then((reponse) => reponse.json());
+  return data.map((product) => {
+    return {
+      params: { product: product.slug },
+      props: { myProduct: product },
+    };
+  });
+}
+
+const { myProduct } = Astro.props;
+console.log(myProduct);
+---
+
+<Layout>
+  <Header />
+  <div class="productvis_container">
+    <div class="productimg_container">
+      <img src=`/img/productlist/${myProduct.images}` alt="" />
+    </div>
+    <div class="producttext_container">
+      <h3 class="h3B">{myProduct.titel}</h3>
+      <div class="productpris_container">
+        <p class="prisitem1">{myProduct.from}</p>
+        <p class="prisitem2">{myProduct.price}</p>
+        <p class="taste">{myProduct.taste}</p>
+      </div>
+      <p>{myProduct.about}</p>
+    </div>
+  </div>
+  <Recommended />
+  <CollageSingleview />
+</Layout>
+
+<style>
+  .productvis_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: var(--gap4);
+
+    height: 500px;
+
+    /* outline: dashed 2px blue; */
+  }
+  .productimg_container {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    justify-items: end;
+    align-items: center;
+  }
+
+  .productimg_container img {
+    width: 90%;
+    max-height: 100%;
+  }
+
+  .producttext_container {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    padding-top: var(--gap1);
+    padding-right: var(--gap4);
+    /* outline: dashed 2px rgb(255, 0, 0); */
+  }
+
+  .productpris_container {
+    width: 70%;
+    max-width: 300px;
+    padding-top: var(--gap05);
+    border-top: solid 3px var(--Primary_Blue);
+
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: var(--gap1);
+  }
+  .prisitem1,
+  .prisitem2 {
+    grid-column: span 1;
+    grid-row: 1/2;
+  }
+  .prisitem2 {
+    justify-self: end;
+  }
+  .taste {
+    font-style: italic;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+  h3 {
+    height: 70px;
+  }
+</style>

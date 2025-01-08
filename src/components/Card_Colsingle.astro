@@ -1,0 +1,48 @@
+---
+const { svcoldata } = Astro.props;
+import "../styles/global.css";
+---
+
+<div class="cardsv">
+  <div class="cardsvimg">
+    <img src=`/img/singleview/${svcoldata.img}` alt="" />
+  </div>
+  <section class="text_container">
+    <h3>{svcoldata.titel}</h3>
+    <p>{svcoldata.text}</p>
+  </section>
+</div>
+
+<style>
+  .cardsv {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    /* outline: dashed 2px blue; */
+
+    flex: none;
+    flex-wrap: nowrap;
+  }
+  .text_container {
+    margin: 0 auto auto auto;
+    padding: var(--gap1);
+    max-width: 60%;
+  }
+  h3 {
+    border-bottom: solid 3px var(--Primary_Blue);
+    color: var(--Primary_Blue);
+    font-size: 20px;
+  }
+
+  .cardsvimg {
+    width: 60%;
+    overflow: hidden;
+    margin: 0 auto;
+    flex: none;
+    /* outline: dashed 2px red; */
+  }
+  img {
+    width: 100%;
+  }
+</style>

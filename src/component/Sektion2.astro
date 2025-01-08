@@ -1,0 +1,158 @@
+---
+import "../styles/global.css"; // Importér global CSS
+---
+
+<section class="sektion_container">
+  <h2 class="h2B">Upcoming Event</h2>
+  <!-- Grid Container -->
+   <div class="img3">
+  <div class="img31"><img  src="/images/blaaflaske.webp" alt="Blå Flaske" loading="lazy" /></div>
+  <div class="img32"><img  src="/images/kaffekopogkande.webp" alt="Kaffekop og Kande" loading="lazy"/></div> 
+  </div>
+  <!-- Left Grid Section -->
+  <div class="text_left_container">
+    <div class="img1">
+      <img src="/images/blaablomst.webp" alt="Blå Blomst" loading="lazy" />
+    </div>
+    <div class="menu">
+      <div class="img2"><img src="/images/menu.webp" alt="Menu" loading="lazy" /></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita
+        ipsum cumque alias, labore iusto sit ut enim obcaecati at, voluptatum
+        voluptate quod exercitationem perferendis dignissimos numquam adipisci
+        facilis esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Porro libero tempore sed sequi commodi asperiores eos incidunt voluptate
+        quos, enim ea! Sunt est delectus modi quia explicabo in. Animi, sed?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum inventore
+        numquam dolorem molestiae quo animi laudantium aliquid eveniet hic
+        quidem nostrum rerum aliquam natus placeat, beatae, rem laboriosam
+        tempore nulla?
+      </p>
+    </div>
+  </div>
+
+  <!-- Right Grid Section -->
+  <div class="text_right_container">
+    <div class="event_container">
+    <h2 class="h2B">POP UP MEYHANE</h2>
+    <p>06.08.2025 - 15:00</p>
+    <p>KITCHEN COLLECTIVE | SLAGTEHUSGADE 11A</p>
+    <p>Event Pris Pr. Person - <strong>300 Kr.</strong></p>
+    <br />
+    <p>
+      We've spent the summer traveling, eating, drinking, and now we’re returning with a daytime rakı experience accompanied by live music! We’re delving into the culinary history of Istanbul, once the center of the world and an imperial city. From a vast region stretching from Iran to the Balkans, we take pleasure in presenting and sharing healthy and ancient meze recipes in Copenhagen. For the October 6th menu, we’ll be selecting some of our favorite Pop-Up flavors to date.
+      Of course, we have our rakı and delicious wines selected from Anatolia and Greece. There’s even a bottle of Bulgarian wine 😅 Chef Gizem will be bustling in the kitchen with delightful mezes.
+    </p>
+  
+    <img src="/images/kultbillede.webp" alt="Kult Billede" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .sektion_container {
+    width: 100dvw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+  }
+  h2 {
+    height: 100px;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: last baseline;
+  }
+  .text_left_container {
+    height: fit-content;
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr;
+    grid-template-rows: 20% 20% 1fr 1fr 1fr;
+  }
+  .img1 {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 2;
+    max-height: 300px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .img1 img {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 100%;
+    aspect-ratio: 0.84:1;
+    justify-self:start;
+    align-self: last baseline;
+  }
+  .menu {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    z-index: 3;
+  }
+
+  .menu img {
+    width: 70%;
+  }
+  .text_right_container {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+
+    column-gap: 6rem;
+    padding-right: var(--gap2);
+    padding-bottom: var(--gap4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    z-index: 1;
+
+    background-color: var(--Secondary_Sand);
+  }
+  .text_right_container img{
+    border-radius: 10px;
+    width: 60%;
+  }
+  .event_container {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+  }
+  .event_container h2 {
+    margin-top: var(--gap4);
+  }
+  .event_container p:last-of-type {
+    margin-bottom: var(--gap2);
+  }
+  .img3 {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: end;
+  }
+  .img31 {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+
+  width:30%;
+  }
+  .img31 img, .img32 img {
+    width:100%;
+  }
+  .img32 {
+  grid-column: 1/-1;
+  grid-row: 2/-1;
+  align-self: end;
+  }
+</style>

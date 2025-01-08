@@ -1,0 +1,68 @@
+---
+import "../styles/global.css"
+---
+
+<section class="About_grid">
+    <div class="AboutSection">
+        <div><img src="/img/about1.svg" alt="billede af mennesker og alkohol" class="about1"></div>
+        <div class="text"> <p>Pop-up Meyhane København is a unique dining and cultural experience that brings the rich tradition of Turkish meyhane culture to Copenhagen. A meyhane, meaning "wine house," is a cornerstone of Turkish social life, where friends and family gather to share food, stories, and laughter over raki and delicious meze dishes.</p></div>
+    </div>
+    <div class="AboutSection">
+        <div class="text"><p>At Pop-up Meyhane København, we invite our guests to immerse themselves in this authentic cultural tradition. Our events combine the best of Turkish hospitality with a modern twist, offering high-quality food and beverages with historical and cultural significance. Each event is an opportunity to explore the tastes, stories, and spirit of Istanbul while fostering connection and community.</p></div>
+        <div class="about2"><img src="/img/about2.png" alt="billede af mennesker og alkohol" ></div>
+    </div>
+    <div class="AboutSection">
+        <div><img src="/img/about3.svg" alt="billede af mennesker og alkohol" class="about3"></div>
+        <div  class="text"><p>Our mission is to create an inclusive space where people can enjoy:
+            Authentic Turkish Cuisine: Meze dishes made with care and tradition, paired with raki and regional wines.
+            Cultural Enrichment: Live music, storytelling, and artistic elements inspired by Ottoman, Byzantine, and Turkish heritage.
+            A Social Atmosphere: A welcoming environment that encourages connection and shared experiences.</p></div>
+    </div>
+    <div class="AboutSection">
+        <div></div>
+        <div><img src="/img/about4.png" alt="billede af mennesker og alkohol" ></div>
+    </div>
+    <div>
+        <div><img src="/img/about5.svg" alt="billede af mennesker og alkohol" ></div>
+    </div>
+</section>
+
+<style>
+
+    .About_grid {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+      justify-content: space-evenly;
+       height: 1000px; 
+    }
+ 
+   
+  .text {
+    max-width: 50%;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+    .AboutSection {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       align-items: center;
+       grid-column: span 1;
+       grid-row: span 1;
+    }
+
+    .about2 {
+        justify-self: end;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        font-size: 1vw;
+    }
+
+   
+</style>

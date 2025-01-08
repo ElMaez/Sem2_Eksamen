@@ -1,0 +1,162 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<div class="hero_container">
+  <header class="hero_header">
+    <a href="/" class="header_logo_container">
+      <img src="/img/Group176.webp" alt="" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/booking">Booking</a></li>
+        <li><a href="#">Event</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="header_icon_container">
+      <img class="header_icon" src="/img/icons/kurvesvg.webp" alt="" />
+    </a>
+  </header>
+
+  <div class="hero">
+    <h1>Pop-up Meyhane Copenhagen</h1>
+    <h2>Next Event 06-08-2025</h2>
+    <a href="#" class="button">
+      <img src="/img/SVG/calltoaction.svg" alt="" />
+      <h3>Book Now</h3>
+    </a>
+  </div>
+</div>
+
+<style>
+  .hero h1 {
+    grid-row: 2/3;
+    text-align: center;
+  }
+
+  .hero h2 {
+    grid-row: 3/4;
+    text-align: center;
+    margin: auto;
+  }
+  .button {
+    max-width: 30%;
+    height: fit-content;
+
+    grid-row: 4/5;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    justify-self: center;
+  }
+  .button img {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: 1;
+  }
+  .button h3 {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: 2;
+
+    justify-self: center;
+    align-self: center;
+  }
+
+  .button:hover {
+    max-width: 40%;
+    scale: 105%;
+  }
+  .hero_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100dvw;
+    height: fit-content;
+  }
+  .hero_header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    z-index: 2;
+  }
+  .hero {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: 1;
+
+    background-image: url("/img/hero.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100dvw;
+    aspect-ratio: 16/9;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 15% 15% 2fr;
+  }
+
+  header {
+    height: 9rem;
+    display: grid;
+    margin-bottom: var(--gap2);
+    grid-template-columns: 20% 2fr 6%;
+    grid-template-rows: 1fr;
+  }
+  nav {
+    grid-column: 2/3;
+    justify-self: end;
+    padding-top: var(--gap2);
+    padding-right: var(--gap2);
+  }
+  .header_logo_container {
+    grid-column: 1/2;
+    justify-self: start;
+  }
+
+  .header_logo_container img {
+    width: 70%;
+  }
+  .header_logo_container img:hover {
+    width: 75%;
+  }
+
+  .header_icon_container {
+    padding-top: var(--gap1);
+    grid-column: 3/4;
+    justify-self: end;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap2);
+    list-style: none;
+  }
+  li {
+    margin: auto;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: var(--font_Charm);
+    font-size: var(--menu_size);
+    color: var(--menu_color);
+  }
+  .header_icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  .header_icon:hover {
+    width: 4.05rem;
+    height: 4.05rem;
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import "../styles/global.css";
+---
+
+<section class="Recommended_container">
+  <div class="plates">
+    <img src="img/previous events/graphic1.webp" alt="" />
+  </div>
+  <div class="teaglass">
+    <img src="img/previous events/graphic2.webp" alt="" />
+  </div>
+  <section class="backgroundcolor">
+    <div class="text"><h3>Previous Events & Menues</h3></div>
+    <div class="img_container">
+      <img src="/img/previous events/image1.webp" />
+      <img src="/img/previous events/image2.webp" />
+      <img src="/img/previous events/image3.webp" />
+      <img src="/img/previous events/image4.webp" />
+    </div>
+  </section>
+</section>
+
+<style>
+  .img_container {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    gap: 1em;
+    z-index: 0;
+    padding-bottom: 2em;
+  }
+
+  .img_container img {
+    width: calc(25% - 1em);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .backgroundcolor {
+    background-color: var(--Tertiary_Red);
+
+    z-index: -1;
+    grid-column: 1/-1;
+    grid-row: 3/6;
+    padding: 1em;
+  }
+
+  h3 {
+    color: var(--Primary_Blue);
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .text {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    padding: 1em;
+  }
+
+  .Recommended_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1em;
+  }
+
+  .plates {
+    grid-column: 4/5;
+    grid-row: 2/4;
+    z-index: 1;
+    justify-self: center;
+    align-self: center;
+    width: 80%;
+  }
+
+  .teaglass {
+    grid-column: 1/2;
+    grid-row: 6;
+    z-index: 1;
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    .Recommended_container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .plates,
+    .teaglass {
+      grid-column: 1/-1;
+      width: 100%;
+    }
+
+    .img_container img {
+      width: calc(50% - 1em);
+    }
+    .backgroundcolor {
+      grid-row: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .Recommended_container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .img_container img {
+      width: calc(100% - 1em);
+    }
+
+    h3 {
+      font-size: 5vw;
+    }
+
+    .plates,
+    .teaglass {
+      width: 100%;
+    }
+
+    .text {
+      text-align: center;
+      padding: 1em;
+    }
+  }
+</style>

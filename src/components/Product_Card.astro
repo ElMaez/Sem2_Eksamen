@@ -1,0 +1,65 @@
+---
+const { productsdata } = Astro.props;
+
+import "../styles/global.css";
+---
+
+<div class="cardp">
+  <a href={`products/${productsdata.slug}`} class="cardpimg">
+    <img src=`/img/productlist/${productsdata.images}` alt="" />
+  </a>
+  <section class="p_text_container">
+    <h3 class="h3B">{productsdata.titel}</h3>
+    <p>{productsdata.description}<a href="#">Læs mere ...</a></p>
+    <div class="price_container">
+      <p class="price1">{productsdata.price}</p>
+      <p class="price2">+</p>
+    </div>
+  </section>
+</div>
+
+<style>
+  .cardp {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 1fr;
+
+    width: 400px;
+  }
+  .cardpimg {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  .p_text_container {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+
+    padding: var(--gap1);
+  }
+
+  .price_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: var(--gap1);
+
+    width: 70%;
+    height: 50px;
+    border-top: solid 3px var(--Primary_Blue);
+  }
+
+  .price1,
+  .price2 {
+    grid-column: span 1;
+    grid-row: 1/-1;
+
+    padding-top: var(--gap05);
+  }
+
+  .price2 {
+    justify-self: end;
+  }
+  h3 {
+    margin-bottom: var(--gap1);
+  }
+</style>

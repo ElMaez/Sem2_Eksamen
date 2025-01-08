@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+---
+
+<div class="Review_container">
+  <div class="Instagram_post">
+    <img src="/img/Reviewimg.webp" alt="Instagram post" />
+  </div>
+
+  <div class="text_container">
+    <div class="text">
+      <p>
+        Attended your Meyhane pop-up last night, and it was amazing! The food
+        was delicious, and the vibe was so cozy. Hope you’ll do more events like
+        this in the future!
+      </p>
+    </div>
+    <div class="NameAge"><p><italic>-Age 43, Tania</italic></p></div>
+    <div class="Quote1Grid">
+      <img src="/img/Quote1.webp" alt="quotation mark" class="Quotation1" />
+    </div>
+    <div class="Quote2Grid">
+      <img src="/img/Quote2.webp" alt="quotation mark" class="Quotation2" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .text_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25% 25% 25%;
+    width: 500px;
+    height: 400px;
+  }
+
+  .text {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    z-index: 1;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .text p {
+    font-family: "Charm";
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .NameAge {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+
+  .NameAge p {
+    font-family: "Charm";
+    color: var(--Primary_Blue);
+  }
+
+  .Review_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .Quotation1 {
+    width: 100%;
+  }
+
+  .Quotation2 {
+    width: 100%;
+  }
+
+  .Quote1Grid {
+    width: 120px;
+    height: 120px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 2;
+  }
+
+  .Quote2Grid {
+    width: 120px;
+    height: 120px;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    z-index: 2;
+  }
+</style>

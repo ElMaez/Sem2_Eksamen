@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+import Product_Card from "../components/Product_Card.astro";
+
+const productlist = await fetch(
+  "https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/product?select=*",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucmNoYmFkYmtpcmZ6a2NlYmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5NzA4MjYsImV4cCI6MjA0MTU0NjgyNn0.mpSt_VfMJynts4yNhF_lHvJafqeHolxXL7wYKBacfjA",
+    },
+  }
+).then((resss) => resss.json());
+
+console.log(productlist);
+---
+
+<section class="pl_container">
+  <div class="pl_img_container">
+    <img src="/img/productlist/skaalsvg.webp" alt="" />
+  </div>
+  <div class="pl_text_container">
+    <h2 class="h2B">Şerefe! <br /> Cheers!</h2>
+    <p>
+      Experience the essence of Turkish drink culture with our carefully
+      selected beverages, including the iconic raki. Perfect for savoring
+      alongside meze, each sip tells a story of tradition and warmth. Take home
+      a bottle to recreate the spirit of the meyhane at your own dinner table.
+    </p>
+  </div>
+  <div class="produktliste">
+    {
+      productlist.map((products) => {
+        return <Product_Card productsdata={products} />;
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .pl_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 20% 1fr;
+    row-gap: var(--gap4);
+
+    width: 100dvw;
+  }
+  .pl_img_container {
+    grid-column: 1/-1;
+    grid-row: 1/3;
+  }
+  .pl_text_container {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+  .pl_img_container img {
+    width: 100%;
+  }
+  .pl_text_container p {
+    text-align: center;
+    width: 65ch;
+    margin: auto;
+  }
+  .produktliste {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 6rem;
+    row-gap: 6rem;
+    justify-content: center;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: var(--gap2);
+  }
+</style>

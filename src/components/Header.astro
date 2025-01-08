@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+---
+
+<header>
+  <a href="/" class="header_logo_container">
+    <img src="/img/Group176.webp" alt="" />
+  </a>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/booking">Booking</a></li>
+      <li><a href="#">Event</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <a href="/" class="header_icon_container">
+    <img class="header_icon" src="/img/icons/kurvesvg.webp" alt="" />
+  </a>
+</header>
+
+<style>
+  header {
+    height: 9rem;
+    display: grid;
+    margin-bottom: var(--gap2);
+    grid-template-columns: 20% 2fr 6%;
+    grid-template-rows: 1fr;
+  }
+  nav {
+    grid-column: 2/3;
+    justify-self: end;
+    padding-top: var(--gap2);
+    padding-right: var(--gap2);
+  }
+  .header_logo_container {
+    grid-column: 1/2;
+    justify-self: start;
+  }
+
+  .header_logo_container img {
+    width: 70%;
+  }
+  .header_logo_container img:hover {
+    width: 75%;
+  }
+
+  .header_icon_container {
+    padding-top: var(--gap1);
+    grid-column: 3/4;
+    justify-self: end;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap2);
+    list-style: none;
+  }
+  li {
+    margin: auto;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: var(--font_Charm);
+    font-size: var(--menu_size);
+    color: var(--Primary_Blue);
+  }
+  .header_icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  .header_icon:hover {
+    width: 4.05rem;
+    height: 4.05rem;
+  }
+</style>
