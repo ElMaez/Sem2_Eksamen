@@ -29,7 +29,19 @@ console.log(singleViewAbout);
 <!-- Tilføj Scroll som container til alt (hint det er med (); ;D )  -->
 <!-- Difiner at der skal animeres! (hint husk ("vælg inner container altså .cardsv", {} )) -->
 <!-- Inde i {} tilføj transform [translateX"100vw" og "-330vw"] -->
-<!-- Vælg #svfinal -->
+<!-- Vælg #svcollage -->
+ <!-- (); () {} [] {} -->
+
+<script>
+  import {animate, scroll} from "motion";
+  scroll(
+    animate (".cardsv", {
+      transform:["translateX(80vw)", "translateX(calc(-350vw))"],
+      }),
+      {target: document.querySelector("#svcollage")}
+  );
+</script>
+
 
 <style>
   #svcollage {
@@ -38,7 +50,7 @@ console.log(singleViewAbout);
     display: flex;
     flex-direction: row;
 
-    overflow-x: scroll;
+    overflow: clip;
   }
   #svfinal {
     width: 450px;
@@ -48,7 +60,7 @@ console.log(singleViewAbout);
 
     position: sticky;
     top: 10vw;
-    overflow: clip;
+    overflow-x: hidden;
   }
   #svfinal img {
     width: 100%;
